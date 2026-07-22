@@ -14,70 +14,75 @@
     flex-direction: column;
     align-items: center;
     color: white;
-    padding: 1vh 2vw;
     overflow: hidden;
   }
   h1 {
     font-size: clamp(1.2em, 4vw, 2.5em);
-    margin-bottom: 1vh;
+    margin-bottom: clamp(1vh, 2%, 10px);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     color: #ffd700;
+    flex-shrink: 0;
   }
   .game-area {
     width: 100%;
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 2vh;
     flex: 1;
+    min-height: 0;
+    padding: 0 clamp(2vw, 4%, 20px);
   }
   .hand-area {
     background: rgba(0,0,0,0.2);
     border-radius: 15px;
-    padding: 1.5vh 2vw;
-    flex: 0.8;
+    padding: clamp(0.8vh, 1.5%, 12px) clamp(1vw, 2%, 15px);
+    flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
   }
   .hand-title {
-    font-size: clamp(0.9em, 3vw, 1.3em);
-    margin-bottom: 1vh;
+    font-size: clamp(0.8em, 2.5vw, 1.3em);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
   }
   .hand-score {
     background: #ffd700;
     color: #333;
-    padding: 0.5vh 1.5vw;
+    padding: 0.3vh clamp(0.5vw, 1%, 8px);
     border-radius: 20px;
     font-weight: bold;
+    white-space: nowrap;
   }
   .cards {
     display: flex;
-    gap: clamp(5px, 2vw, 10px);
+    gap: clamp(4px, 1.5vw, 10px);
     flex-wrap: wrap;
     flex: 1;
     align-items: center;
     justify-content: center;
+    min-height: 0;
   }
   .card {
-    width: clamp(50px, 12vw, 80px);
-    height: clamp(75px, 18vh, 120px);
+    width: clamp(45px, 10vw, 80px);
+    height: clamp(65px, 14vh, 120px);
     background: white;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: clamp(0.8em, 2.5vw, 1.2em);
+    font-size: clamp(0.7em, 2vw, 1.2em);
     font-weight: bold;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     position: relative;
+    flex-shrink: 0;
   }
   .card.red { color: #d40000; }
   .card.black { color: #333; }
-  .card-suit { font-size: clamp(1.2em, 4vw, 2em); }
+  .card-suit { font-size: clamp(1em, 3.5vw, 2em); }
   .card.hidden {
     background: linear-gradient(45deg, #1a3a5c 25%, #2a4a6c 25%, #2a4a6c 50%, #1a3a5c 50%, #1a3a5c 75%, #2a4a6c 75%);
     background-size: 20px 20px;
@@ -85,22 +90,24 @@
   }
   .card.hidden::after {
     content: '?';
-    font-size: clamp(1.2em, 4vw, 2em);
+    font-size: clamp(1em, 3.5vw, 2em);
     color: white;
   }
   .controls {
     display: flex;
-    gap: clamp(8px, 3vw, 15px);
+    gap: clamp(6px, 2vw, 15px);
     justify-content: center;
-    padding: 1vh 0;
+    padding: clamp(0.5vh, 1%, 8px) 0;
+    flex-shrink: 0;
   }
   button {
-    padding: clamp(8px, 2vh, 15px) clamp(15px, 4vw, 30px);
-    font-size: clamp(0.9em, 2.5vw, 1.2em);
+    padding: clamp(6px, 1.5vh, 12px) clamp(10px, 3vw, 25px);
+    font-size: clamp(0.8em, 2.2vw, 1.2em);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    white-space: nowrap;
   }
   button:hover { opacity: 0.9; }
   button:active { opacity: 0.7; }
@@ -113,10 +120,14 @@
   }
   .message {
     text-align: center;
-    font-size: clamp(1em, 3vw, 1.5em);
-    padding: 1vh 2vw;
+    font-size: clamp(0.8em, 2.5vw, 1.5em);
+    padding: clamp(0.5vh, 1%, 10px) clamp(1vw, 2%, 15px);
     border-radius: 10px;
-    min-height: 3vh;
+    flex-shrink: 0;
+    min-height: clamp(2vh, 4%, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .message.win { background: #4CAF50; }
   .message.lose { background: #f44336; }
@@ -124,16 +135,18 @@
   .message.blackjack { background: #ffd700; color: #333; }
   .score-board {
     display: flex;
-    gap: clamp(8px, 3vw, 20px);
+    gap: clamp(6px, 2vw, 20px);
     justify-content: center;
-    padding: 1vh 2vw;
+    padding: clamp(0.3vh, 0.8%, 6px) clamp(1vw, 2%, 15px);
     background: rgba(0,0,0,0.3);
     border-radius: 10px;
+    flex-shrink: 0;
   }
   .score-item {
-    font-size: clamp(0.7em, 2vw, 1.1em);
-    padding: 0.5vh 1.5vw;
+    font-size: clamp(0.6em, 1.8vw, 1.1em);
+    padding: 0.3vh clamp(0.5vw, 1%, 8px);
     border-radius: 5px;
+    white-space: nowrap;
   }
   .score-win { background: #4CAF50; }
   .score-lose { background: #f44336; }
@@ -141,14 +154,13 @@
   .info {
     text-align: center;
     color: #aaa;
-    font-size: clamp(0.6em, 1.8vw, 0.9em);
-    margin-top: 1vh;
+    font-size: clamp(0.5em, 1.5vw, 0.9em);
+    flex-shrink: 0;
+    margin-top: clamp(0.3vh, 0.5%, 5px);
   }
   
   @media (max-width: 480px) {
-    body { padding: 1vh 1vw; }
-    .hand-area { padding: 1vh 1vw; }
-    button { padding: 6px 12px; }
+    .info { display: none; }
   }
 </style>
 </head>
